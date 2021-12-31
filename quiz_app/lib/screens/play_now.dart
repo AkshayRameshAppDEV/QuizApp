@@ -6,19 +6,12 @@ class PlayNow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Play Now"),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Play now',
-            ),
+          children: const <Widget>[
             Text(
-              'Play Now',
-              style: Theme.of(context).textTheme.headline4,
+              'Play now',
             ),
           ],
         ),
