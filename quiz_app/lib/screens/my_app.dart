@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import './play_now.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class QuizApp extends StatelessWidget {
+  const QuizApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
