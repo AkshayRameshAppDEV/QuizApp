@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/gradient_icon.dart';
 
 class PlayNow extends StatelessWidget {
   const PlayNow({Key? key}) : super(key: key);
@@ -11,8 +12,18 @@ class PlayNow extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
-            Text(
-              'Icon',
+            GradientIcon(
+              Icons.quiz,
+              100.0,
+              LinearGradient(
+                colors: <Color>[
+                  Colors.red,
+                  Colors.yellow,
+                  Colors.blue,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
             ),
             Text(
               'Quiz App',
@@ -25,9 +36,6 @@ class PlayNow extends StatelessWidget {
             ),
             Text(
               'Play now',
-            ),
-            Text(
-              'About',
             ),
           ],
         ),
