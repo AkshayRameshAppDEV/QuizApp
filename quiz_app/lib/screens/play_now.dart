@@ -12,28 +12,29 @@ class PlayNow extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const <Widget>[
-            GradientIcon(
-              Icons.quiz,
-              150.0,
-              LinearGradient(
-                colors: <Color>[
-                  Colors.purple,
-                  Colors.blue,
-                  Colors.red,
-                  Colors.yellow,
-                  Colors.orange,
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                GradientIcon(
+                  Icons.quiz,
+                  150.0,
+                  LinearGradient(
+                    colors: <Color>[
+                      Colors.purple,
+                      Colors.blue,
+                      Colors.red,
+                      Colors.yellow,
+                      Colors.orange,
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                ),
+                CustomText('Quiz App', 25.0, Colors.lightGreen),
+              ],
             ),
-            CustomText(
-              'Quiz App',
-              25.0,
-              Colors.lightGreen
-            ),
-            Text(
+            const Text(
               'Let\'s Play!',
             ),
           ],
