@@ -12,7 +12,22 @@ class PlayNow extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
             Text(
+              'Icon',
+            ),
+            Text(
+              'Quiz App',
+            ),
+            Text(
+              'Let\'s Play!',
+            ),
+            Text(
+              'Play Now and Level Up',
+            ),
+            Text(
               'Play now',
+            ),
+            Text(
+              'About',
             ),
           ],
         ),
