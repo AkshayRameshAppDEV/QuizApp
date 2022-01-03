@@ -48,3 +48,17 @@ class PlayNowTitleIconWidget extends StatelessWidget {
     );
   }
 }
+
+class PlayNowButtonsWidget extends StatelessWidget {
+  const PlayNowButtonsWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        CustomText('Let\'s Play!', 25.0, Colors.white),
+        CustomText('Play now and Level up', 20.0, Colors.white),
+      ],
+    );
+  }
+}

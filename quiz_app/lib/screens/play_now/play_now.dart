@@ -14,6 +14,7 @@ class PlayNow extends StatelessWidget {
           children: const <Widget>[
             PlayNowTitleIconWidget(),
             PlayNowBodyTitleWidget(),
+            PlayNowButtonsWidget()
           ],
         ),
       ),
