@@ -6,7 +6,7 @@ class PlayNow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff291a57),
+      backgroundColor: const Color(0xff32167c),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
