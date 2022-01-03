@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/gradient_icon.dart';
+import '../widgets/custom_text.dart';
 
 class PlayNow extends StatelessWidget {
   const PlayNow({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class PlayNow extends StatelessWidget {
       backgroundColor: const Color(0xff32167c),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: const <Widget>[
             GradientIcon(
               Icons.quiz,
@@ -27,7 +28,7 @@ class PlayNow extends StatelessWidget {
                 end: Alignment.bottomRight,
               ),
             ),
-            Text(
+            CustomText(
               'Quiz App',
             ),
             Text(
