@@ -12,37 +12,59 @@ class PlayNow extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                GradientIcon(
-                  Icons.quiz,
-                  150.0,
-                  LinearGradient(
-                    colors: <Color>[
-                      Colors.purple,
-                      Colors.blue,
-                      Colors.red,
-                      Colors.yellow,
-                      Colors.orange,
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-                CustomText('Quiz App', 30.0, Color(0xff00fac3)),
-              ],
-            ),
-            Column(
-              children: const [
-                CustomText('Let\'s Play!', 25.0, Colors.white),
-                CustomText('Play now and Level up', 20.0, Colors.white),
-              ],
-            ),
+          children: const <Widget>[
+            PlayNowTitleIconWidget(),
+            PlayNowBodyTitleWidget(),
           ],
         ),
       ),
+    );
+  }
+}
+
+class PlayNowBodyTitleWidget extends StatelessWidget {
+  const PlayNowBodyTitleWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        CustomText('Let\'s Play!', 25.0, Colors.white),
+        CustomText('Play now and Level up', 20.0, Colors.white),
+      ],
+    );
+  }
+}
+
+class PlayNowTitleIconWidget extends StatelessWidget {
+  const PlayNowTitleIconWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: const [
+        GradientIcon(
+          Icons.quiz,
+          150.0,
+          LinearGradient(
+            colors: <Color>[
+              Colors.purple,
+              Colors.blue,
+              Colors.red,
+              Colors.yellow,
+              Colors.orange,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        CustomText('Quiz App', 30.0, Color(0xff00fac3)),
+      ],
     );
   }
 }
