@@ -1,26 +1,6 @@
 import 'package:flutter/material.dart';
-import '../reusable_widgets/gradient_icon.dart';
-import '../reusable_widgets/custom_text.dart';
-
-class PlayNow extends StatelessWidget {
-  const PlayNow({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xff32167c),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const <Widget>[
-            PlayNowTitleIconWidget(),
-            PlayNowBodyTitleWidget(),
-          ],
-        ),
-      ),
-    );
-  }
-}
+import '../../../reusable_widgets/gradient_icon.dart';
+import '../../../reusable_widgets/custom_text.dart';
 
 class PlayNowBodyTitleWidget extends StatelessWidget {
   const PlayNowBodyTitleWidget({
