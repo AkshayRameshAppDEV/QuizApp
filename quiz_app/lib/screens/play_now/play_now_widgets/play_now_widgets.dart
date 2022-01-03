@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../reusable_widgets/gradient_icon.dart';
 import '../../../reusable_widgets/custom_text.dart';
+import '../../../reusable_widgets/custom_button.dart';
 
 class PlayNowBodyTitleWidget extends StatelessWidget {
   const PlayNowBodyTitleWidget({
@@ -56,8 +57,14 @@ class PlayNowButtonsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        CustomText('Let\'s Play!', 25.0, Colors.white),
-        CustomText('Play now and Level up', 20.0, Colors.white),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: CustomButtonWidget(),
+        ),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: CustomButtonWidget(),
+        ),
       ],
     );
   }
