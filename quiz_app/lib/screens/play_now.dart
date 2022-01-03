@@ -31,7 +31,7 @@ class PlayNow extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ),
                 ),
-                CustomText('Quiz App', 30.0, Color(0xff39ff14)),
+                CustomText('Quiz App', 30.0, Color(0xff00fac3)),
               ],
             ),
             Column(
