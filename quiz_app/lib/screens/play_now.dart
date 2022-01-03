@@ -36,16 +36,8 @@ class PlayNow extends StatelessWidget {
             ),
             Column(
               children: const [
-                CustomText(
-                  'Let\'s Play!',
-                  25.0,
-                  Colors.white
-                ),
-                CustomText(
-                  'Play now and Level up',
-                  20.0,
-                  Colors.white
-                ),
+                CustomText('Let\'s Play!', 25.0, Colors.white),
+                CustomText('Play now and Level up', 20.0, Colors.white),
               ],
             ),
           ],
