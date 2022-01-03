@@ -31,11 +31,22 @@ class PlayNow extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ),
                 ),
-                CustomText('Quiz App', 25.0, Color(0xff39ff14)),
+                CustomText('Quiz App', 30.0, Color(0xff39ff14)),
               ],
             ),
-            const Text(
-              'Let\'s Play!',
+            Column(
+              children: const [
+                CustomText(
+                  'Let\'s Play!',
+                  25.0,
+                  Colors.white
+                ),
+                CustomText(
+                  'Play now and Level up',
+                  20.0,
+                  Colors.white
+                ),
+              ],
             ),
           ],
         ),
