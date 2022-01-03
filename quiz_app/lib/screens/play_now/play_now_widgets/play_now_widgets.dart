@@ -43,7 +43,7 @@ class PlayNowTitleIconWidget extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        CustomText('Quiz App', 30.0, Color(0xff00fac3)),
+        CustomText('Quizzles', 40.0, Color(0xff00fac3)),
       ],
     );
   }
