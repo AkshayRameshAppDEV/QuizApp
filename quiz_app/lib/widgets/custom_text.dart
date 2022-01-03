@@ -17,7 +17,7 @@ class CustomText extends StatelessWidget {
     return Text(
       textData,
       style: GoogleFonts.nunito(
-        textStyle: const TextStyle(color: Colors.blue),
+        textStyle: TextStyle(color: textColor),
         fontSize: textFontSize,
         fontWeight: FontWeight.bold
   ),
