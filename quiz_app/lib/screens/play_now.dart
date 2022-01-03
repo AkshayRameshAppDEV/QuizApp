@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/gradient_icon.dart';
-import '../widgets/custom_text.dart';
+import '../reusable_widgets/gradient_icon.dart';
+import '../reusable_widgets/custom_text.dart';
 
 class PlayNow extends StatelessWidget {
   const PlayNow({Key? key}) : super(key: key);
