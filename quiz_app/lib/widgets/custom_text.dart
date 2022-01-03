@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomText extends StatelessWidget {
   final String textData;
@@ -15,10 +16,11 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       textData,
-      style: TextStyle(
+      style: GoogleFonts.nunito(
+        textStyle: const TextStyle(color: Colors.blue),
         fontSize: textFontSize,
-        color: textColor
-      ),
+        fontWeight: FontWeight.bold
+  ),
     );
   }
 }
