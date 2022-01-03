@@ -14,12 +14,14 @@ class PlayNow extends StatelessWidget {
           children: const <Widget>[
             GradientIcon(
               Icons.quiz,
-              100.0,
+              150.0,
               LinearGradient(
                 colors: <Color>[
+                  Colors.purple,
+                  Colors.blue,
                   Colors.red,
                   Colors.yellow,
-                  Colors.blue,
+                  Colors.orange,
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
