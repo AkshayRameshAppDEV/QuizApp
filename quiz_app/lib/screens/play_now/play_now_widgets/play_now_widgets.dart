@@ -63,7 +63,7 @@ class PlayNowButtonsWidget extends StatelessWidget {
         ),
          Padding(
           padding: const EdgeInsets.all(8.0),
-          child: CustomButtonWidget("About", 20.0, Colors.white, Border.all(color: const Color(0xff6949fd), width: 2.0), Colors.transparent),
+          child: CustomButtonWidget("About", 20.0, const Color(0xff6949fd), Border.all(color: const Color(0xff6949fd), width: 2.0), Colors.transparent),
         ),
       ],
     );
