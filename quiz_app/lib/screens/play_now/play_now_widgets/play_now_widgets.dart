@@ -4,6 +4,7 @@ import '../../../reusable_widgets/gradient_icon.dart';
 import '../../../reusable_widgets/custom_text.dart';
 import '../../../reusable_widgets/custom_button.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import '../../levels.dart';
 
 class PlayNowBodyTitleWidget extends StatelessWidget {
   const PlayNowBodyTitleWidget({
@@ -75,7 +76,7 @@ class PlayNowButtonsWidget extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.all(8.0),
           child: CustomButtonWidget("Play Now", 20.0, Colors.white, null,
-              Color(0xff6949fd), 300.0, 60.0),
+              Color(0xff6949fd), 300.0, 60.0, Levels()),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -86,7 +87,8 @@ class PlayNowButtonsWidget extends StatelessWidget {
               Border.all(color: const Color(0xff6949fd), width: 2.0),
               Colors.transparent,
               300.0,
-              60.0),
+              60.0,
+              Container()),
         ),
       ],
     );

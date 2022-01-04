@@ -9,20 +9,28 @@ class CustomButtonWidget extends StatelessWidget {
   final Color buttonBackgroundcolor;
   final double buttonWidth;
   final double buttonHeight;
+  final Widget screen;
 
   const CustomButtonWidget(
-    this.buttonText,
-    this.fontSize,
-    this.textColor,
-    this.borderProperties,
-    this.buttonBackgroundcolor,
-    this.buttonWidth,
-    this.buttonHeight
+      this.buttonText,
+      this.fontSize,
+      this.textColor,
+      this.borderProperties,
+      this.buttonBackgroundcolor,
+      this.buttonWidth,
+      this.buttonHeight,
+      this.screen
   );
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: () => {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => screen),
+        )
+      },
       child: Container(
         width: buttonWidth,
         height: buttonHeight,
@@ -32,11 +40,7 @@ class CustomButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Center(
-          child: CustomText(
-            buttonText,
-            fontSize,
-            textColor
-          ),
+          child: CustomText(buttonText, fontSize, textColor),
         ),
       ),
     );
