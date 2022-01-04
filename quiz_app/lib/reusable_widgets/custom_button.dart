@@ -6,7 +6,7 @@ class CustomButtonWidget extends StatelessWidget {
   final double fontSize;
   final Color textColor;
   final Border? borderProperties;
-  final buttonBackgroundcolor;
+  final Color buttonBackgroundcolor;
 
   const CustomButtonWidget(
     this.buttonText,
