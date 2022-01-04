@@ -22,15 +22,17 @@ class CustomButtonWidget extends StatelessWidget {
       this.screen
   );
 
+  void pushB(BuildContext context) {
+    Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => screen),
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => screen),
-        )
-      },
+      onTap: () => pushB(context),
       child: Container(
         width: buttonWidth,
         height: buttonHeight,
