@@ -59,11 +59,11 @@ class PlayNowButtonsWidget extends StatelessWidget {
       children: const [
         Padding(
           padding: EdgeInsets.all(8.0),
-          child: CustomButtonWidget(),
+          child: CustomButtonWidget("Play Now"),
         ),
         Padding(
           padding: EdgeInsets.all(8.0),
-          child: CustomButtonWidget(),
+          child: CustomButtonWidget("About"),
         ),
       ],
     );

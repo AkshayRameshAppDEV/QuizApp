@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'custom_text.dart';
 
 class CustomButtonWidget extends StatelessWidget {
-  const CustomButtonWidget({Key? key}) : super(key: key);
+  final String buttonText;
+
+  const CustomButtonWidget(
+    this.buttonText,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +19,11 @@ class CustomButtonWidget extends StatelessWidget {
           border: Border.all(color: Colors.white, width: 2.0),
           borderRadius: BorderRadius.circular(10.0),
         ),
-        child: const Center(
-          child: Text(
-            'Click Me',
-            style: TextStyle(fontSize: 18.0, color: Colors.white),
+        child: Center(
+          child: CustomText(
+            buttonText,
+            20.0,
+            Colors.white
           ),
         ),
       ),
