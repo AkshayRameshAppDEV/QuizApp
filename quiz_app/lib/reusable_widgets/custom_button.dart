@@ -21,7 +21,7 @@ class CustomButtonWidget extends StatelessWidget {
     return InkWell(
       child: Container(
         width: 300.0,
-        height: 50.0,
+        height: 60.0,
         decoration: BoxDecoration(
           color: buttonBackgroundcolor,
           border: borderProperties,
