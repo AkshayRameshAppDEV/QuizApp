@@ -9,7 +9,7 @@ class CustomButtonWidget extends StatelessWidget {
   final Color buttonBackgroundcolor;
   final double buttonWidth;
   final double buttonHeight;
-  final Widget screen;
+  final VoidCallback customFunc;
 
   const CustomButtonWidget(
       this.buttonText,
@@ -19,20 +19,13 @@ class CustomButtonWidget extends StatelessWidget {
       this.buttonBackgroundcolor,
       this.buttonWidth,
       this.buttonHeight,
-      this.screen
+      this.customFunc
   );
-
-  void pushB(BuildContext context) {
-    Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => screen),
-        );
-  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => pushB(context),
+      onTap: customFunc,
       child: Container(
         width: buttonWidth,
         height: buttonHeight,

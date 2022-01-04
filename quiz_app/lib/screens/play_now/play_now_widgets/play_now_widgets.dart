@@ -69,14 +69,35 @@ class PlayNowTitleIconWidget extends StatelessWidget {
 class PlayNowButtonsWidget extends StatelessWidget {
   const PlayNowButtonsWidget({Key? key}) : super(key: key);
 
+  void gotoLevelsPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const Levels()),
+    );
+  }
+
+  void displayAboutSnackbar(BuildContext context) {
+   final snackBar = SnackBar(
+            content: const Text('Yay! A SnackBar!'),
+            action: SnackBarAction(
+              label: 'Dismiss',
+              onPressed: () {},
+            ),
+          );
+
+          // Find the ScaffoldMessenger in the widget tree
+          // and use it to show a SnackBar.
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.all(8.0),
+         Padding(
+          padding:  const EdgeInsets.all(8.0),
           child: CustomButtonWidget("Play Now", 20.0, Colors.white, null,
-              Color(0xff6949fd), 300.0, 60.0, Levels()),
+               const Color(0xff6949fd), 300.0, 60.0, () => gotoLevelsPage(context)),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -88,7 +109,7 @@ class PlayNowButtonsWidget extends StatelessWidget {
               Colors.transparent,
               300.0,
               60.0,
-              Container()),
+              () => displayAboutSnackbar(context)),
         ),
       ],
     );
