@@ -7,21 +7,25 @@ class CustomButtonWidget extends StatelessWidget {
   final Color textColor;
   final Border? borderProperties;
   final Color buttonBackgroundcolor;
+  final double buttonWidth;
+  final double buttonHeight;
 
   const CustomButtonWidget(
     this.buttonText,
     this.fontSize,
     this.textColor,
     this.borderProperties,
-    this.buttonBackgroundcolor
+    this.buttonBackgroundcolor,
+    this.buttonWidth,
+    this.buttonHeight
   );
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        width: 300.0,
-        height: 60.0,
+        width: buttonWidth,
+        height: buttonHeight,
         decoration: BoxDecoration(
           color: buttonBackgroundcolor,
           border: borderProperties,
