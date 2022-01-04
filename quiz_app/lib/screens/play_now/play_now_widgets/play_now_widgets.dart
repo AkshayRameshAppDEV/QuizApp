@@ -56,14 +56,14 @@ class PlayNowButtonsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        Padding(
+      children:  [
+        const Padding(
           padding: EdgeInsets.all(8.0),
-          child: CustomButtonWidget("Play Now"),
+          child: CustomButtonWidget("Play Now", 20.0, Colors.white, null, Color(0xff6949fd)),
         ),
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: CustomButtonWidget("About"),
+         Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CustomButtonWidget("About", 20.0, Colors.white, Border.all(color: const Color(0xff6949fd), width: 2.0), Colors.transparent),
         ),
       ],
     );

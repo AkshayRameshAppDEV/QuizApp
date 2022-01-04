@@ -3,9 +3,17 @@ import 'custom_text.dart';
 
 class CustomButtonWidget extends StatelessWidget {
   final String buttonText;
+  final double fontSize;
+  final Color textColor;
+  final Border? borderProperties;
+  final buttonBackgroundcolor;
 
   const CustomButtonWidget(
     this.buttonText,
+    this.fontSize,
+    this.textColor,
+    this.borderProperties,
+    this.buttonBackgroundcolor
   );
 
   @override
@@ -15,15 +23,15 @@ class CustomButtonWidget extends StatelessWidget {
         width: 300.0,
         height: 50.0,
         decoration: BoxDecoration(
-          color: const Color(0xff6949fd),
-          border: Border.all(color: Colors.white, width: 2.0),
+          color: buttonBackgroundcolor,
+          border: borderProperties,
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Center(
           child: CustomText(
             buttonText,
-            20.0,
-            Colors.white
+            fontSize,
+            textColor
           ),
         ),
       ),
