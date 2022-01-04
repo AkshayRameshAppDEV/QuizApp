@@ -5,11 +5,13 @@ class CustomText extends StatelessWidget {
   final String textData;
   final double textFontSize;
   final Color textColor;
+  final FontWeight textFontWeight;
 
   const CustomText(
     this.textData,
     this.textFontSize,
-    this.textColor
+    this.textColor,
+    this.textFontWeight
   );
 
   @override
@@ -19,7 +21,7 @@ class CustomText extends StatelessWidget {
       style: GoogleFonts.nunito(
         textStyle: TextStyle(color: textColor),
         fontSize: textFontSize,
-        fontWeight: FontWeight.bold
+        fontWeight: textFontWeight
   ),
     );
   }

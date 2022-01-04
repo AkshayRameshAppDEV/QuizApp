@@ -15,8 +15,8 @@ class PlayNowBodyTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        CustomText('Let\'s Play!', 25.0, Colors.white),
-        CustomText('Play now and Level up', 20.0, Colors.white),
+        CustomText('Let\'s Play!', 25.0, Colors.white, FontWeight.bold),
+        CustomText('Play now and Level up', 20.0, Colors.white, FontWeight.bold),
       ],
     );
   }
@@ -79,7 +79,7 @@ class PlayNowButtonsWidget extends StatelessWidget {
   void displayAboutSnackbar(BuildContext context) {
    final snackBar = SnackBar(
             backgroundColor: const Color(0xff32167c),
-            content: const CustomText('A fun quiz app which tests user about any topic with increasing difficulty. Version 1.0.0', 12.0, Colors.white),
+            content: const CustomText('A fun quiz app which tests user about any topic with increasing difficulty. Version 1.0.0', 12.0, Colors.white, FontWeight.bold),
             action: SnackBarAction(
               label: 'Dismiss',
               textColor: const Color(0xff00fac3),
@@ -99,7 +99,7 @@ class PlayNowButtonsWidget extends StatelessWidget {
          Padding(
           padding:  const EdgeInsets.all(8.0),
           child: CustomButtonWidget("Play Now", 20.0, Colors.white, null,
-               const Color(0xff6949fd), 300.0, 60.0, () => gotoLevelsPage(context)),
+               const Color(0xff6949fd), 300.0, 60.0, () => gotoLevelsPage(context), FontWeight.bold),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -111,7 +111,8 @@ class PlayNowButtonsWidget extends StatelessWidget {
               Colors.transparent,
               300.0,
               60.0,
-              () => displayAboutSnackbar(context)),
+              () => displayAboutSnackbar(context),
+              FontWeight.bold),
         ),
       ],
     );

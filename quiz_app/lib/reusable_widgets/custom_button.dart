@@ -10,6 +10,7 @@ class CustomButtonWidget extends StatelessWidget {
   final double buttonWidth;
   final double buttonHeight;
   final VoidCallback customFunc;
+  final FontWeight textFontWeight;
 
   const CustomButtonWidget(
       this.buttonText,
@@ -19,7 +20,8 @@ class CustomButtonWidget extends StatelessWidget {
       this.buttonBackgroundcolor,
       this.buttonWidth,
       this.buttonHeight,
-      this.customFunc
+      this.customFunc,
+      this.textFontWeight
   );
 
   @override
@@ -35,7 +37,7 @@ class CustomButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Center(
-          child: CustomText(buttonText, fontSize, textColor),
+          child: CustomText(buttonText, fontSize, textColor, textFontWeight),
         ),
       ),
     );
