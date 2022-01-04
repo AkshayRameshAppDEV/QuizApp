@@ -78,7 +78,7 @@ class PlayNowButtonsWidget extends StatelessWidget {
 
   void displayAboutSnackbar(BuildContext context) {
    final snackBar = SnackBar(
-            content: const Text('Yay! A SnackBar!'),
+            content: const Text('A fun quiz app which tests user about any topic with increasing difficulty. Version 1.0.0'),
             action: SnackBarAction(
               label: 'Dismiss',
               onPressed: () {},
