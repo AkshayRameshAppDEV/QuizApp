@@ -78,9 +78,11 @@ class PlayNowButtonsWidget extends StatelessWidget {
 
   void displayAboutSnackbar(BuildContext context) {
    final snackBar = SnackBar(
-            content: const Text('A fun quiz app which tests user about any topic with increasing difficulty. Version 1.0.0'),
+            backgroundColor: const Color(0xff32167c),
+            content: const CustomText('A fun quiz app which tests user about any topic with increasing difficulty. Version 1.0.0', 12.0, Colors.white),
             action: SnackBarAction(
               label: 'Dismiss',
+              textColor: const Color(0xff00fac3),
               onPressed: () {},
             ),
           );
