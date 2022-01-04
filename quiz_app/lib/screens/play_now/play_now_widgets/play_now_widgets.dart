@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../reusable_widgets/gradient_icon.dart';
 import '../../../reusable_widgets/custom_text.dart';
 import '../../../reusable_widgets/custom_button.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class PlayNowBodyTitleWidget extends StatelessWidget {
   const PlayNowBodyTitleWidget({
@@ -28,8 +30,8 @@ class PlayNowTitleIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: const [
-        GradientIcon(
+      children: [
+        const GradientIcon(
           Icons.quiz,
           150.0,
           LinearGradient(
@@ -44,7 +46,20 @@ class PlayNowTitleIconWidget extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        CustomText('Quizzles', 40.0, Color(0xff00fac3)),
+        AnimatedTextKit(
+          animatedTexts: [
+            WavyAnimatedText(
+              'Quizzles',
+              textStyle: GoogleFonts.nunito(
+                color: const Color(0xff00fac3),
+                fontSize: 40.0,
+                fontWeight: FontWeight.bold
+              )
+              ),
+          ],
+          isRepeatingAnimation: true,
+          repeatForever: true,
+        )
       ],
     );
   }
@@ -56,14 +71,22 @@ class PlayNowButtonsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children:  [
+      children: [
         const Padding(
           padding: EdgeInsets.all(8.0),
-          child: CustomButtonWidget("Play Now", 20.0, Colors.white, null, Color(0xff6949fd), 300.0, 60.0),
+          child: CustomButtonWidget("Play Now", 20.0, Colors.white, null,
+              Color(0xff6949fd), 300.0, 60.0),
         ),
-         Padding(
+        Padding(
           padding: const EdgeInsets.all(8.0),
-          child: CustomButtonWidget("About", 20.0, const Color(0xff6949fd), Border.all(color: const Color(0xff6949fd), width: 2.0), Colors.transparent, 300.0, 60.0),
+          child: CustomButtonWidget(
+              "About",
+              20.0,
+              const Color(0xff6949fd),
+              Border.all(color: const Color(0xff6949fd), width: 2.0),
+              Colors.transparent,
+              300.0,
+              60.0),
         ),
       ],
     );
