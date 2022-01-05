@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../reusable_widgets/custom_text.dart';
-import 'dart:math' as math;
 import 'package:polygon_clipper/polygon_clipper.dart';
 
 class Levels extends StatelessWidget {
