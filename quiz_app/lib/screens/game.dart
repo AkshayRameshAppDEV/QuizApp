@@ -77,11 +77,10 @@ class Game extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Row(children: [
                     RawMaterialButton(
+                      fillColor: const Color(0xff6949fd),
                       onPressed: () {},
                       elevation: 2.0,
-                      fillColor: Colors.white,
-                      child: Text('${index + 1}'),
-                      padding: const EdgeInsets.all(15.0),
+                      child:  CustomText('0${index + 1}', 15.0, Colors.white, FontWeight.w900),
                       shape: const CircleBorder(),
                     ),
                     const Text('Entry A')
