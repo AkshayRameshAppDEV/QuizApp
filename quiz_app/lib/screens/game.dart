@@ -9,16 +9,19 @@ class Game extends StatelessWidget {
     showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          title: const Text('Quit Game'),
-          content: const Text('Are you sure you want to quit the game?'),
+          backgroundColor: const Color(0xff6949fd),
+          title: const CustomText('Quit Game', 15.0, Colors.white, FontWeight.bold),
+          content: const CustomText('Are you sure you want to quit the game?', 15.0, Colors.white, FontWeight.normal),
           actions: <Widget>[
             TextButton(
               onPressed: () => Navigator.pop(context, 'Cancel'),
-              child: const Text('Cancel'),
+              child: const CustomText("Cancel", 15.0, Color(0xff00fac3),
+            FontWeight.bold),
             ),
             TextButton(
               onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false),
-              child: const Text('OK'),
+              child: const CustomText("OK", 15.0, Colors.red,
+            FontWeight.bold),
             ),
           ],
         ),
