@@ -4,7 +4,7 @@ import '../../reusable_widgets/gradient_icon.dart';
 import '../../reusable_widgets/custom_text.dart';
 import '../../reusable_widgets/custom_button.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import '../levels.dart';
+import '../levels/levels.dart';
 
 class PlayNowBodyTitleWidget extends StatelessWidget {
   const PlayNowBodyTitleWidget({

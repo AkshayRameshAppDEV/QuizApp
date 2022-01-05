@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../reusable_widgets/custom_text.dart';
+import '../../reusable_widgets/custom_text.dart';
 import 'package:polygon_clipper/polygon_clipper.dart';
-import './game.dart';
+import '../game.dart';
 
 class Levels extends StatelessWidget {
   const Levels({Key? key}) : super(key: key);
