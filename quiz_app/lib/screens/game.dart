@@ -10,7 +10,7 @@ class Game extends StatelessWidget {
         context: context,
         builder: (BuildContext context) => AlertDialog(
           title: const Text('Quit Game'),
-          content: const Text('Are you sure you want to quit the game'),
+          content: const Text('Are you sure you want to quit the game?'),
           actions: <Widget>[
             TextButton(
               onPressed: () => Navigator.pop(context, 'Cancel'),
