@@ -11,9 +11,13 @@ class Levels extends StatelessWidget {
         backgroundColor: const Color(0xff32167c),
         elevation: 0,
         title: const Text("Levels"),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.orange),
+        leading: ElevatedButton(
           onPressed: () => Navigator.of(context).pop(),
+          child: const Icon(Icons.arrow_back, color: Colors.white),
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            primary: const Color(0xff6949fd), // <-- Button color
+          ),
         ),
       ),
       body: Center(
