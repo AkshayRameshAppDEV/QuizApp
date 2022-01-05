@@ -6,8 +6,11 @@ class Levels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff32167c),
       appBar: AppBar(
-        title: const Text("Second Route"),
+        backgroundColor: const Color(0xff32167c),
+        elevation: 0,
+        title: const Text("Levels"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.orange),
           onPressed: () => Navigator.of(context).pop(),
