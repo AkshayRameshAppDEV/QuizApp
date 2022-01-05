@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './play_now_widgets/play_now_widgets.dart';
+import 'play_now_widgets.dart';
 
 class PlayNow extends StatelessWidget {
   const PlayNow({Key? key}) : super(key: key);
