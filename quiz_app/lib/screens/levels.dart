@@ -28,7 +28,7 @@ class Levels extends StatelessWidget {
         // horizontal, this produces 2 rows.
         crossAxisCount: 2,
         // Generate 100 widgets that display their index in the List.
-        children: List.generate(10, (index) {
+        children: List.generate(8, (index) {
           return Center(
             child: ClipPath(
               clipper: MyPolygon(),
@@ -42,6 +42,36 @@ class Levels extends StatelessWidget {
                         'Level', 25.0, Colors.white, FontWeight.bold),
                     CustomText(
                         '${index + 1}', 20.0, Colors.white, FontWeight.bold),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(
+                          Icons.star,
+                          size: 20,
+                          color: Colors.yellow, //The color which you want set.
+                        ),
+                        Icon(
+                          Icons.star,
+                          size: 20,
+                          color: Colors.yellow, //The color which you want set.
+                        ),
+                        Icon(
+                          Icons.star,
+                          size: 20,
+                          color: Colors.yellow, //The color which you want set.
+                        ),
+                        Icon(
+                          Icons.star,
+                          size: 20,
+                          color: Colors.yellow, //The color which you want set.
+                        ),
+                        Icon(
+                          Icons.star,
+                          size: 20,
+                          color: Colors.yellow, //The color which you want set.
+                        ),
+                      ],
+                    )
                   ],
                 ),
                 width: 150,
