@@ -15,11 +15,11 @@ class Game extends StatelessWidget {
         elevation: 0,
         actions: [
           ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false),
             child: const Icon(Icons.dangerous_outlined, color: Colors.white),
             style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
-              primary: const Color(0xff6949fd), // <-- Button color
+              primary: Colors.red, // <-- Button color
             ),
           ),
         ],
