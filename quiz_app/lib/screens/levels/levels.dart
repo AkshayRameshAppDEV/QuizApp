@@ -61,10 +61,9 @@ class Levels extends StatelessWidget {
                               FontWeight.bold),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              FullStar(),
-                              EmptyStar(),
-                            ],
+                            children: List.generate(index+1, (index) {
+                              return const FullStar();
+                            }),
                           )
                         ],
                       ),
@@ -74,22 +73,6 @@ class Levels extends StatelessWidget {
           );
         }),
       ),
-    );
-  }
-}
-
-class EmptyStar extends StatelessWidget {
-  const EmptyStar({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Icon(
-      Icons.star_outline,
-      size: 20,
-      color:
-          Colors.yellow, //The color which you want set.
     );
   }
 }
