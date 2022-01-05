@@ -63,7 +63,6 @@ class Levels extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const [
                               FullStar(),
-                              EmptyStar(),
                             ],
                           )
                         ],
@@ -77,23 +76,6 @@ class Levels extends StatelessWidget {
     );
   }
 }
-
-class EmptyStar extends StatelessWidget {
-  const EmptyStar({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Icon(
-      Icons.star_outline,
-      size: 20,
-      color:
-          Colors.yellow, //The color which you want set.
-    );
-  }
-}
-
 class FullStar extends StatelessWidget {
   const FullStar({
     Key? key,
