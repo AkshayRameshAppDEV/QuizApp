@@ -29,13 +29,37 @@ class Levels extends StatelessWidget {
         // Generate 100 widgets that display their index in the List.
         children: List.generate(10, (index) {
           return Center(
-            child: Text(
-              'Item $index',
-              style: Theme.of(context).textTheme.headline5,
+            child: ClipPath(
+              clipper: MyPolygon(),
+              child: Container(
+                color: Colors.red,
+                width: 150,
+                height: 150,
+              ),
             ),
           );
         }),
       ),
     );
+  }
+}
+
+class MyPolygon extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    path.addPolygon([
+      Offset(0, size.height * 1 / 3),
+      Offset(size.width / 2, 0),
+      Offset(size.width, size.height * 1 / 3),
+      Offset(size.width * 4 / 5, size.height),
+      Offset(size.width * 1 / 5, size.height),
+    ], true);
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return false;
   }
 }
