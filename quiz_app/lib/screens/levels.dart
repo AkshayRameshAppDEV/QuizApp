@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../reusable_widgets/custom_text.dart';
+import 'dart:math' as math;
 
 class Levels extends StatelessWidget {
   const Levels({Key? key}) : super(key: key);
@@ -32,7 +33,17 @@ class Levels extends StatelessWidget {
             child: ClipPath(
               clipper: MyPolygon(),
               child: Container(
-                color: Colors.red,
+                color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+                    .withOpacity(0.5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const CustomText(
+                        'Level', 25.0, Colors.white, FontWeight.bold),
+                    CustomText(
+                        '${index + 1}', 20.0, Colors.white, FontWeight.bold),
+                  ],
+                ),
                 width: 150,
                 height: 150,
               ),
