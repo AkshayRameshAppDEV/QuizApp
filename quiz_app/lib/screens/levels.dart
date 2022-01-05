@@ -35,10 +35,18 @@ class Levels extends StatelessWidget {
                 padding: const EdgeInsets.all(30.0),
                 child: ClipPolygon(
                   sides: 5,
+                  boxShadows: [
+                    PolygonBoxShadow(color: Colors.black, elevation: 7.0),
+                    PolygonBoxShadow(color: Colors.black, elevation: 5.0)
+                  ],
                   child: Container(
-                    color:
-                        Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
-                            .withOpacity(0.5),
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            "https://cdn.pixabay.com/photo/2019/08/11/02/52/planet-4398012_1280.jpg"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
