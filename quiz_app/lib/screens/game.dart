@@ -52,14 +52,18 @@ class Game extends StatelessWidget {
             FontWeight.bold),
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              const CustomText("1/10", 25.0, Color(0xff00fac3), FontWeight.bold),
-              const CustomText("What is the 6th planet in the solar system?",
+        child: Column(
+          children: [
+            const CustomText("1/10", 20.0, Color(0xff00fac3), FontWeight.bold),
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 20.0),
+              child: CustomText("What is the 6th planet in the solar system?",
                   25.0, Colors.white, FontWeight.bold),
-              Card(
+            ),
+            SizedBox(
+              width: 360,
+              height: 300,
+              child: Card(
                 semanticContainer: true,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 child: Image.network(
@@ -72,45 +76,39 @@ class Game extends StatelessWidget {
                 elevation: 5,
                 margin: const EdgeInsets.all(10),
               ),
-              Column(
-                children: List.generate(4, (index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(children: [
-                      RawMaterialButton(
-                        fillColor: const Color(0xff6949fd),
-                        onPressed: () {},
-                        elevation: 2.0,
-                        child:  CustomText('0${index + 1}', 15.0, Colors.white, FontWeight.w900),
-                        shape: const CircleBorder(),
-                      ),
-                      const Text('Entry A')
-                    ]),
-                  );
-                }),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        // Respond to button press
-                      },
-                      child: const Text("Previous"),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        // Respond to button press
-                      },
-                      child: const Text("Next"),
-                    )
-                  ],
+            ),
+            Column(
+              children: List.generate(4, (index) {
+                return Row(children: [
+                  RawMaterialButton(
+                    fillColor: const Color(0xff6949fd),
+                    onPressed: () {},
+                    elevation: 2.0,
+                    child:  CustomText('0${index + 1}', 15.0, Colors.white, FontWeight.w900),
+                    shape: const CircleBorder(),
+                  ),
+                  const Text('Entry A')
+                ]);
+              }),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    // Respond to button press
+                  },
+                  child: const Text("Previous"),
                 ),
-              )
-            ],
-          ),
+                ElevatedButton(
+                  onPressed: () {
+                    // Respond to button press
+                  },
+                  child: const Text("Next"),
+                )
+              ],
+            )
+          ],
         ),
       ),
     );
