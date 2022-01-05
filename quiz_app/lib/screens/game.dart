@@ -5,6 +5,26 @@ class Game extends StatelessWidget {
   final int levelNumber;
   const Game({Key? key, required this.levelNumber}) : super(key: key);
 
+  void showAlert(BuildContext context) {
+    showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: const Text('Quit Game'),
+          content: const Text('Are you sure you want to quit the game'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'Cancel'),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false),
+              child: const Text('OK'),
+            ),
+          ],
+        ),
+      );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +35,7 @@ class Game extends StatelessWidget {
         elevation: 0,
         actions: [
           ElevatedButton(
-            onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic> route) => false),
+            onPressed: () => showAlert(context),
             child: const Icon(Icons.dangerous_outlined, color: Colors.white),
             style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
