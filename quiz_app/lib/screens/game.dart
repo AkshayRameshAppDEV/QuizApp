@@ -11,7 +11,7 @@ class Game extends StatefulWidget {
 
 class _GameState extends State<Game> {  
 
-  Color? optionSelectedColor = Colors.transparent;
+  Color? optionSelectedColor = const Color(0xff00fac3);
   int currentTappedOption = -1;
 
   void showAlert(BuildContext context) {
@@ -39,9 +39,8 @@ class _GameState extends State<Game> {
     );
   }
 
-  void selectColor(int index){
+  void setCurrentTappedIndex(int index){
     setState(() {
-      optionSelectedColor = const Color(0xff00fac3);
       currentTappedOption = index;
     });
   }
@@ -96,7 +95,7 @@ class _GameState extends State<Game> {
             Column(
               children: List.generate(4, (index) {
                 return GestureDetector(
-                  onTap: () => selectColor(index),
+                  onTap: () => setCurrentTappedIndex(index),
                   child: Container(
                     color: currentTappedOption == index ? optionSelectedColor : Colors.transparent,
                     child: Row(children: [
