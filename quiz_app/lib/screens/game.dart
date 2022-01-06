@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import '../reusable_widgets/custom_text.dart';
 
-class Game extends StatelessWidget {
-  final int levelNumber;
+class Game extends StatefulWidget {
+    final int levelNumber;
   const Game({Key? key, required this.levelNumber}) : super(key: key);
 
+  @override
+  _GameState createState() => _GameState();
+}
+
+class _GameState extends State<Game> {  
   void showAlert(BuildContext context) {
     showDialog<String>(
       context: context,
@@ -48,7 +53,7 @@ class Game extends StatelessWidget {
             ),
           ),
         ],
-        title: CustomText("Level $levelNumber", 25.0, const Color(0xff00fac3),
+        title: CustomText("Level ${widget.levelNumber}", 25.0, const Color(0xff00fac3),
             FontWeight.bold),
       ),
       body: SingleChildScrollView(
@@ -79,16 +84,22 @@ class Game extends StatelessWidget {
             ),
             Column(
               children: List.generate(4, (index) {
-                return Row(children: [
-                  RawMaterialButton(
-                    fillColor: const Color(0xff6949fd),
-                    onPressed: () {},
-                    elevation: 2.0,
-                    child:  CustomText('0${index + 1}', 15.0, Colors.white, FontWeight.w900),
-                    shape: const CircleBorder(),
+                return GestureDetector(
+                  onTap: () => {},
+                  child: Container(
+                    color: const Color(0xff00fac3),
+                    child: Row(children: [
+                      RawMaterialButton(
+                        fillColor: const Color(0xff6949fd),
+                        onPressed: () {},
+                        elevation: 2.0,
+                        child:  CustomText('0${index + 1}', 15.0, Colors.white, FontWeight.w900),
+                        shape: const CircleBorder(),
+                      ),
+                      const Text('Entry A')
+                    ]),
                   ),
-                  const Text('Entry A')
-                ]);
+                );
               }),
             ),
             Padding(
