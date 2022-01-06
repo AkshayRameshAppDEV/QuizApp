@@ -91,22 +91,27 @@ class Game extends StatelessWidget {
                 ]);
               }),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    // Respond to button press
-                  },
-                  child: const Text("Previous"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Respond to button press
-                  },
-                  child: const Text("Next"),
-                )
-              ],
+            Padding(
+              padding: const EdgeInsets.all(80.0),
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(const Color(0xff6949fd))),
+                    onPressed: () {
+                      // Respond to button press
+                    },
+                    child: const Text("Previous"),
+                  ),
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(const Color(0xff6949fd))),
+                    onPressed: () {
+                      // Respond to button press
+                    },
+                    child: const Text("Next"),
+                  )
+                ],
+              ),
             )
           ],
         ),
