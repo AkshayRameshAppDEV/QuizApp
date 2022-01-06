@@ -10,6 +10,10 @@ class Game extends StatefulWidget {
 }
 
 class _GameState extends State<Game> {  
+
+  Color? optionSelectedColor = Colors.transparent;
+  int currentTappedOption = -1;
+
   void showAlert(BuildContext context) {
     showDialog<String>(
       context: context,
@@ -33,6 +37,13 @@ class _GameState extends State<Game> {
         ],
       ),
     );
+  }
+
+  void selectColor(int index){
+    setState(() {
+      optionSelectedColor = const Color(0xff00fac3);
+      currentTappedOption = index;
+    });
   }
 
   @override
@@ -85,9 +96,9 @@ class _GameState extends State<Game> {
             Column(
               children: List.generate(4, (index) {
                 return GestureDetector(
-                  onTap: () => {},
+                  onTap: () => selectColor(index),
                   child: Container(
-                    color: const Color(0xff00fac3),
+                    color: currentTappedOption == index ? optionSelectedColor : Colors.transparent,
                     child: Row(children: [
                       RawMaterialButton(
                         fillColor: const Color(0xff6949fd),
