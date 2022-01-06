@@ -114,7 +114,8 @@ class _GameState extends State<Game> {
                               FontWeight.w900),
                           shape: const CircleBorder(),
                         ),
-                        const Text('Entry A')
+                        const CustomText('Jupiter', 15.0, Colors.black,
+                              FontWeight.bold)
                       ]),
                     ),
                   ),
