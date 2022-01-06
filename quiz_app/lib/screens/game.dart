@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import '../reusable_widgets/custom_text.dart';
 
 class Game extends StatefulWidget {
-    final int levelNumber;
+  final int levelNumber;
   const Game({Key? key, required this.levelNumber}) : super(key: key);
 
   @override
   _GameState createState() => _GameState();
 }
 
-class _GameState extends State<Game> {  
-
+class _GameState extends State<Game> {
   Color? optionSelectedColor = const Color(0xff00fac3);
   int currentTappedOption = -1;
 
@@ -39,7 +38,7 @@ class _GameState extends State<Game> {
     );
   }
 
-  void setCurrentTappedIndex(int index){
+  void setCurrentTappedIndex(int index) {
     setState(() {
       currentTappedOption = index;
     });
@@ -63,8 +62,8 @@ class _GameState extends State<Game> {
             ),
           ),
         ],
-        title: CustomText("Level ${widget.levelNumber}", 25.0, const Color(0xff00fac3),
-            FontWeight.bold),
+        title: CustomText("Level ${widget.levelNumber}", 25.0,
+            const Color(0xff00fac3), FontWeight.bold),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -96,18 +95,28 @@ class _GameState extends State<Game> {
               children: List.generate(4, (index) {
                 return GestureDetector(
                   onTap: () => setCurrentTappedIndex(index),
-                  child: Container(
-                    color: currentTappedOption == index ? optionSelectedColor : Colors.transparent,
-                    child: Row(children: [
-                      RawMaterialButton(
-                        fillColor: const Color(0xff6949fd),
-                        onPressed: () {},
-                        elevation: 2.0,
-                        child:  CustomText('0${index + 1}', 15.0, Colors.white, FontWeight.w900),
-                        shape: const CircleBorder(),
-                      ),
-                      const Text('Entry A')
-                    ]),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: currentTappedOption == index
+                              ? optionSelectedColor
+                              : Colors.transparent,
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(15))),
+                      // color: currentTappedOption == index ? optionSelectedColor : Colors.transparent,
+                      child: Row(children: [
+                        RawMaterialButton(
+                          fillColor: const Color(0xff6949fd),
+                          onPressed: () {},
+                          elevation: 2.0,
+                          child: CustomText('0${index + 1}', 15.0, Colors.white,
+                              FontWeight.w900),
+                          shape: const CircleBorder(),
+                        ),
+                        const Text('Entry A')
+                      ]),
+                    ),
                   ),
                 );
               }),
@@ -117,7 +126,9 @@ class _GameState extends State<Game> {
               child: Row(
                 children: [
                   ElevatedButton(
-                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(const Color(0xff6949fd))),
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            const Color(0xff6949fd))),
                     onPressed: () {
                       // Respond to button press
                     },
@@ -125,7 +136,9 @@ class _GameState extends State<Game> {
                   ),
                   const Spacer(),
                   ElevatedButton(
-                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(const Color(0xff6949fd))),
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            const Color(0xff6949fd))),
                     onPressed: () {
                       // Respond to button press
                     },
