@@ -104,7 +104,6 @@ class _GameState extends State<Game> {
                               : Colors.transparent,
                           borderRadius:
                               const BorderRadius.all(Radius.circular(15))),
-                      // color: currentTappedOption == index ? optionSelectedColor : Colors.transparent,
                       child: Row(children: [
                         RawMaterialButton(
                           fillColor: const Color(0xff6949fd),
@@ -114,7 +113,9 @@ class _GameState extends State<Game> {
                               FontWeight.w900),
                           shape: const CircleBorder(),
                         ),
-                        const CustomText('Jupiter', 15.0, Colors.black,
+                         CustomText('Jupiter', 15.0, currentTappedOption == index
+                              ? Colors.black
+                              : Colors.white,
                               FontWeight.bold)
                       ]),
                     ),
