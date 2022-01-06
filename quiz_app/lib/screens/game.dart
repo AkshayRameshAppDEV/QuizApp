@@ -107,7 +107,7 @@ class _GameState extends State<Game> {
                       child: Row(children: [
                         RawMaterialButton(
                           fillColor: const Color(0xff6949fd),
-                          onPressed: () {},
+                          onPressed: () => setCurrentTappedIndex(index),
                           elevation: 2.0,
                           child: CustomText('0${index + 1}', 15.0, Colors.white,
                               FontWeight.w900),
