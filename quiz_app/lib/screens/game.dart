@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import '../reusable_widgets/custom_text.dart';
+import '../model/question.dart';
 
 class Game extends StatefulWidget {
   final int levelNumber;
-  const Game({Key? key, required this.levelNumber}) : super(key: key);
+  Question? q;
+  Game({Key? key, required this.levelNumber, this.q}) : super(key: key);
 
   @override
   _GameState createState() => _GameState();
@@ -12,6 +14,13 @@ class Game extends StatefulWidget {
 class _GameState extends State<Game> {
   Color? optionSelectedColor = const Color(0xff00fac3);
   int currentTappedOption = -1;
+  int currentQuestionNumber = 1;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.q = Question(widget.levelNumber);
+  }
 
   void showAlert(BuildContext context) {
     showDialog<String>(
@@ -44,6 +53,12 @@ class _GameState extends State<Game> {
     });
   }
 
+  void setCurrentQuestionNumber() {
+    setState(() {
+      currentQuestionNumber++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +83,7 @@ class _GameState extends State<Game> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const CustomText("1/10", 20.0, Color(0xff00fac3), FontWeight.bold),
+            CustomText("$currentQuestionNumber/10", 20.0, const Color(0xff00fac3), FontWeight.bold),
             const Padding(
               padding: EdgeInsets.only(left: 20.0, right: 20.0),
               child: CustomText("What is the 6th planet in the solar system?",
@@ -131,9 +146,7 @@ class _GameState extends State<Game> {
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                             const Color(0xff6949fd))),
-                    onPressed: () {
-                      // Respond to button press
-                    },
+                    onPressed: setCurrentQuestionNumber,
                     child: const Text("Previous"),
                   ),
                   const Spacer(),
@@ -141,9 +154,7 @@ class _GameState extends State<Game> {
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                             const Color(0xff6949fd))),
-                    onPressed: () {
-                      // Respond to button press
-                    },
+                    onPressed: setCurrentQuestionNumber,
                     child: const Text("Next"),
                   )
                 ],
