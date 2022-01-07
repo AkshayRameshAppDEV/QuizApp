@@ -58,8 +58,18 @@ class _GameState extends State<Game> {
   void setCurrentQuestionNumber() {
     setState(() {
       currentQuestionNumber++;
-      currentQuestion = q!.getQuestionsForLevel()[currentQuestionNumber]["question"];
+      if(doesQuestionExistForTheCurrentQuestionNumber()){
+        currentQuestion = q!.getQuestionsForLevel()[currentQuestionNumber]["question"];
+      }
     });
+  }
+
+  bool doesQuestionExistForTheCurrentQuestionNumber(){
+    bool doesExist = false;
+    if (q!.getQuestionsForLevel().containsKey(currentQuestionNumber)) {
+      doesExist = true;
+    }
+    return doesExist;
   }
 
   @override
