@@ -4,8 +4,7 @@ import '../model/question.dart';
 
 class Game extends StatefulWidget {
   final int levelNumber;
-  Question? q;
-  Game({Key? key, required this.levelNumber, this.q}) : super(key: key);
+  Game({Key? key, required this.levelNumber}) : super(key: key);
 
   @override
   _GameState createState() => _GameState();
@@ -16,12 +15,13 @@ class _GameState extends State<Game> {
   int currentTappedOption = -1;
   int currentQuestionNumber = 1;
   String currentQuestion = "";
+  Question? q;
 
   @override
   void initState() {
     super.initState();
-    widget.q = Question(widget.levelNumber);
-    currentQuestion = widget.q!.getQuestionsForLevel()[currentQuestionNumber]["question"];
+    q = Question(widget.levelNumber);
+    currentQuestion = q!.getQuestionsForLevel()[currentQuestionNumber]["question"];
   }
 
   void showAlert(BuildContext context) {
