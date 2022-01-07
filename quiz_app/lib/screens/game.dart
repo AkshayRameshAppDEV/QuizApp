@@ -58,6 +58,7 @@ class _GameState extends State<Game> {
   void setCurrentQuestionNumber() {
     setState(() {
       currentQuestionNumber++;
+      currentQuestion = q!.getQuestionsForLevel()[currentQuestionNumber]["question"];
     });
   }
 
