@@ -55,9 +55,18 @@ class _GameState extends State<Game> {
     });
   }
 
-  void setCurrentQuestionNumber() {
+  void setCurrentQuestionNumberForNextButton() {
     setState(() {
       currentQuestionNumber++;
+      if(doesQuestionExistForTheCurrentQuestionNumber()){
+        currentQuestion = q!.getQuestionsForLevel()[currentQuestionNumber]["question"];
+      }
+    });
+  }
+
+  void setCurrentQuestionNumberForPreviousButton() {
+    setState(() {
+      currentQuestionNumber--;
       if(doesQuestionExistForTheCurrentQuestionNumber()){
         currentQuestion = q!.getQuestionsForLevel()[currentQuestionNumber]["question"];
       }
@@ -159,7 +168,7 @@ class _GameState extends State<Game> {
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                             const Color(0xff6949fd))),
-                    onPressed: setCurrentQuestionNumber,
+                    onPressed: setCurrentQuestionNumberForPreviousButton,
                     child: const Text("Previous"),
                   ),
                   const Spacer(),
@@ -167,7 +176,7 @@ class _GameState extends State<Game> {
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                             const Color(0xff6949fd))),
-                    onPressed: setCurrentQuestionNumber,
+                    onPressed: setCurrentQuestionNumberForNextButton,
                     child: const Text("Next"),
                   )
                 ],
