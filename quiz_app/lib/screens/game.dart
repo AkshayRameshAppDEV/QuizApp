@@ -141,7 +141,7 @@ class _GameState extends State<Game> {
                               FontWeight.w900),
                           shape: const CircleBorder(),
                         ),
-                         CustomText('Jupiter', 15.0, currentTappedOption == index
+                         CustomText(q!.getQuestionsForLevel()[currentQuestionNumber][index+1], 15.0, currentTappedOption == index
                               ? Colors.black
                               : Colors.white,
                               FontWeight.bold)

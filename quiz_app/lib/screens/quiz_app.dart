@@ -16,7 +16,7 @@ class QuizApp extends StatelessWidget {
         home: const PlayNow(),
         routes: <String, WidgetBuilder>{
           '/levels': (BuildContext context) =>  const Levels(),
-          '/game': (BuildContext context) => Game(levelNumber: 1),
+          '/game': (BuildContext context) => const Game(levelNumber: 1),
         });
   }
 }
