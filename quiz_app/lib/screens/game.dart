@@ -15,11 +15,13 @@ class _GameState extends State<Game> {
   Color? optionSelectedColor = const Color(0xff00fac3);
   int currentTappedOption = -1;
   int currentQuestionNumber = 1;
+  String currentQuestion = "";
 
   @override
   void initState() {
     super.initState();
     widget.q = Question(widget.levelNumber);
+    currentQuestion = widget.q!.getQuestionsForLevel()[currentQuestionNumber]["question"];
   }
 
   void showAlert(BuildContext context) {
@@ -84,9 +86,9 @@ class _GameState extends State<Game> {
         child: Column(
           children: [
             CustomText("$currentQuestionNumber/10", 20.0, const Color(0xff00fac3), FontWeight.bold),
-            const Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 20.0),
-              child: CustomText("What is the 6th planet in the solar system?",
+             Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: CustomText(currentQuestion,
                   25.0, Colors.white, FontWeight.bold),
             ),
             SizedBox(

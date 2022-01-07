@@ -22,6 +22,23 @@ class Question {
           "option_4": "Mars"
         },
       };
+    } else if (levelNumber == 2) {
+      levelQuiz = {
+        1: {
+          "question": "What is Android?",
+          "option_1": "Mobile OS",
+          "option_2": "Computer",
+          "option_3": "Phone",
+          "option_4": "Calculator"
+        },
+        2: {
+          "question": "What is iOS?",
+          "option_1": "Mobile OS",
+          "option_2": "Computer",
+          "option_3": "Phone",
+          "option_4": "Calculator"
+        },
+      };
     }
     return levelQuiz;
   }
