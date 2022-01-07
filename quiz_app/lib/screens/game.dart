@@ -4,7 +4,7 @@ import '../model/question.dart';
 
 class Game extends StatefulWidget {
   final int levelNumber;
-  Game({Key? key, required this.levelNumber}) : super(key: key);
+  const Game({Key? key, required this.levelNumber}) : super(key: key);
 
   @override
   _GameState createState() => _GameState();
